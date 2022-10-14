@@ -1,19 +1,17 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable,prefer_const_literals_to_create_immutables
+import 'package:firstui_project/HomePage/models/category_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../data/category_data.dart';
-
 class CategoryGridItem extends StatelessWidget {
-  int index;
-  CategoryGridItem(this.index, {super.key});
+  CateModel cateModel;
+  CategoryGridItem(this.cateModel, {super.key});
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         if (kDebugMode) {
-          print(
-              '${category[index + 1].name} : ${category[index + 1].image}');
+          print('${cateModel.name} : ${cateModel.image}');
         }
       },
       child: Column(
@@ -27,7 +25,7 @@ class CategoryGridItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(7),
             ),
             child: Image.asset(
-              category[index + 1].image,
+              cateModel.image,
               height: 33,
             ),
           ),
@@ -35,7 +33,7 @@ class CategoryGridItem extends StatelessWidget {
             height: 8,
           ),
           Text(
-            category[index + 1].name,
+            cateModel.name,
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.w100),
           )

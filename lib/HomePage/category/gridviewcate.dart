@@ -24,7 +24,7 @@ class CategoryGridView extends StatelessWidget {
         ),
         itemCount: category.length - 1,
         itemBuilder: (context, index) {
-          return CategoryGridItem(index);
+          return CategoryGridItem(category[index + 1]);
         },
       ),
     );

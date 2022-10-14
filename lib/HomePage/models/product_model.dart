@@ -1,7 +1,6 @@
 class ProductModel {
   String name;
   double rate;
-
   int reviews;
   String oldPrice;
   String newPrice;

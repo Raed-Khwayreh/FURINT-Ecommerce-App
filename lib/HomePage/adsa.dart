@@ -1,4 +1,4 @@
-import 'package:first_project/HomePage/product/grid.dart';
+import 'package:firstui_project/HomePage/product/grid.dart';
 import 'package:flutter/material.dart';
 
 import 'data/products_data.dart';

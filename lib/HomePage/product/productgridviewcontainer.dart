@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'package:first_project/HomePage/data/category_data.dart';
-import 'package:first_project/HomePage/data/products_data.dart';
-import 'package:first_project/HomePage/product/grid.dart';
+import 'package:firstui_project/HomePage/data/category_data.dart';
+import 'package:firstui_project/HomePage/data/products_data.dart';
+import 'package:firstui_project/HomePage/product/grid.dart';
 import 'package:flutter/material.dart';
-import 'productDesign.dart';
 
 class ProductGridViewContainer extends StatelessWidget {
   const ProductGridViewContainer({super.key});

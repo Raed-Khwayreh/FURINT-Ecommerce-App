@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
-import 'package:first_project/HomePage/data/products_data.dart';
-import 'package:first_project/HomePage/models/product_model.dart';
+import 'package:firstui_project/HomePage/data/products_data.dart';
+import 'package:firstui_project/HomePage/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

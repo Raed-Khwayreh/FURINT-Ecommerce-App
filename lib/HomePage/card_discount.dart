@@ -15,7 +15,7 @@ class CardDiscount extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 254, 151, 0),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(25.0),
         ),
         child: Stack(
           children: [
