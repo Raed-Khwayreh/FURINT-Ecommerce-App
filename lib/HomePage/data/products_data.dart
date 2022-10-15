@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import '../models/product_model.dart';
 
 List<ProductModel> products = [
@@ -5,6 +7,7 @@ List<ProductModel> products = [
     name: 'Bedside Tables Armoires & Wardrobes',
     rate: 4.8,
     reviews: 110,
+    orders: 65,
     oldPrice: '500',
     newPrice: '399',
     image: 'images/4.png',
@@ -14,6 +17,7 @@ List<ProductModel> products = [
   ProductModel(
     name: 'Comfortable chair',
     rate: 4.2,
+    orders: 20,
     reviews: 152,
     oldPrice: '120',
     newPrice: '80',
@@ -24,6 +28,7 @@ List<ProductModel> products = [
   ProductModel(
     name: 'Nursery Bunk bed',
     rate: 4.3,
+    orders: 90,
     reviews: 98,
     oldPrice: '300',
     newPrice: '220',
@@ -35,6 +40,7 @@ List<ProductModel> products = [
     name: 'Kitchen Armoires & Wardrobes Table Countertop',
     rate: 3.8,
     reviews: 68,
+    orders: 65,
     oldPrice: '750',
     newPrice: '900',
     image: 'images/3.png',
@@ -45,6 +51,7 @@ List<ProductModel> products = [
     name: 'Light fixture Chandelier Lighting',
     rate: 4.2,
     reviews: 24,
+    orders: 120,
     oldPrice: '300',
     newPrice: '210',
     image: 'images/5.png',
@@ -55,10 +62,17 @@ List<ProductModel> products = [
     name: 'Bedside Tables Chest of drawers',
     rate: 4.6,
     reviews: 86,
+    orders: 87,
     oldPrice: '200',
     newPrice: '99',
     image: 'images/6.png',
     fav: false,
     category: 'Bedroom',
   ),
+];
+List<Color> colorList = [
+  const Color.fromARGB(255, 230, 210, 176),
+  const Color.fromARGB(255, 238, 81, 19),
+  const Color.fromARGB(255, 14, 77, 164),
+  const Color.fromARGB(255, 69, 172, 10),
 ];

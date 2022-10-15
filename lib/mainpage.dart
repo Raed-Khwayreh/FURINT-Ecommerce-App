@@ -2,13 +2,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:firstui_project/HomePage/data/products_data.dart';
-import 'package:firstui_project/HomePage/favorite.dart';
+import 'package:firstui_project/HomePage/product/favorite.dart';
 import 'package:firstui_project/HomePage/models/product_model.dart';
 import 'package:firstui_project/HomePage/product/productgridviewcontainer.dart';
-import 'package:firstui_project/home_page.dart';
+import 'package:firstui_project/HomePage/home_page.dart';
 import 'package:flutter/material.dart';
 import 'HomePage/app_bar_home.dart';
-import 'HomePage/card_discount.dart';
+import 'HomePage/DiscountCard/card_discount.dart';
 import 'HomePage/custom_list.dart';
 import 'HomePage/category/gridviewcate.dart';
 import 'HomePage/data/category_data.dart';
@@ -62,7 +62,7 @@ class _MainPageState extends State<MainPage>
         physics: NeverScrollableScrollPhysics(),
         controller: tabController,
         children: [
-          HomePage(funList,funFav),
+          HomePage(funList, funFav),
           Center(
             child: Text('Orders'),
           ),

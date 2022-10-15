@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 
-import 'HomePage/card_discount.dart';
-import 'HomePage/category/gridviewcate.dart';
-import 'HomePage/category/listview.dart';
-import 'HomePage/custom_list.dart';
-import 'HomePage/product/productgridviewcontainer.dart';
+import 'DiscountCard/card_discount.dart';
+import 'category/gridviewcate.dart';
+import 'category/listview.dart';
+import 'custom_list.dart';
+import 'product/productgridviewcontainer.dart';
 
 class HomePage extends StatelessWidget {
   Function funFav;
