@@ -9,7 +9,8 @@ class Grid extends StatelessWidget {
   int count;
   List<ProductModel> list;
   bool physics;
-  Grid(this.count, this.list, this.physics, {super.key});
+  Function favFun;
+  Grid(this.count, this.list, this.physics,this.favFun, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +25,9 @@ class Grid extends StatelessWidget {
         mainAxisSpacing: 15,
         mainAxisExtent: 300,
       ),
-      itemCount: count
-
-      // allSelect
-      //     ? products.length
-      //     : products.where((element) => element.category == cateSelect).length
-      ,
+      itemCount: count,
       itemBuilder: (context, index) {
-        return ProductDesign(list[index]
-            // allSelect
-            //   ? products[index]
-            //   : products
-            //       .where((element) => element.category == cateSelect)
-            //       .toList()[index]
-            );
+        return ProductDesign(list[index], favFun);
       },
     );
   }

@@ -2,6 +2,16 @@ import '../models/product_model.dart';
 
 List<ProductModel> products = [
   ProductModel(
+    name: 'Bedside Tables Armoires & Wardrobes',
+    rate: 4.8,
+    reviews: 110,
+    oldPrice: '500',
+    newPrice: '399',
+    image: 'images/4.png',
+    fav: false,
+    category: 'Bedroom',
+  ),
+  ProductModel(
     name: 'Comfortable chair',
     rate: 4.2,
     reviews: 152,
@@ -30,16 +40,6 @@ List<ProductModel> products = [
     image: 'images/3.png',
     fav: false,
     category: 'Kitchen',
-  ),
-  ProductModel(
-    name: 'Bedside Tables Armoires & Wardrobes',
-    rate: 4.8,
-    reviews: 110,
-    oldPrice: '500',
-    newPrice: '399',
-    image: 'images/4.png',
-    fav: false,
-    category: 'Bedroom',
   ),
   ProductModel(
     name: 'Light fixture Chandelier Lighting',

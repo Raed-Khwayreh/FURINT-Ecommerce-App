@@ -7,7 +7,8 @@ import 'package:firstui_project/HomePage/product/grid.dart';
 import 'package:flutter/material.dart';
 
 class ProductGridViewContainer extends StatelessWidget {
-  const ProductGridViewContainer({super.key});
+  Function favFun;
+  ProductGridViewContainer(this.favFun, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,8 @@ class ProductGridViewContainer extends StatelessWidget {
               : products
                   .where((element) => element.category == cateSelect)
                   .toList(),
-          false),
+          false,
+          favFun),
     );
   }
 

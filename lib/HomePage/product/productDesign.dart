@@ -4,27 +4,22 @@ import 'package:firstui_project/HomePage/models/product_model.dart';
 import 'package:firstui_project/SecondPage/product_details.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
-class ProductDesign extends StatefulWidget {
+class ProductDesign extends StatelessWidget {
   ProductModel productModel;
-  ProductDesign(this.productModel, {super.key});
-
-  @override
-  State<ProductDesign> createState() => _ProductDesignState();
-}
-
-class _ProductDesignState extends State<ProductDesign> {
+  Function favFun;
+  ProductDesign(this.productModel, this.favFun, {super.key});
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => ProductDetails(widget.productModel)),
+          MaterialPageRoute(builder: (context) => ProductDetails(productModel)),
         );
         if (kDebugMode) {
-          print('${widget.productModel.name} ');
+          print('${productModel.name} ');
         }
       },
       child: Column(
@@ -42,7 +37,7 @@ class _ProductDesignState extends State<ProductDesign> {
                 children: [
                   Center(
                     child: Image.asset(
-                      widget.productModel.image,
+                      productModel.image,
                       width: 110,
                     ),
                   ),
@@ -51,15 +46,12 @@ class _ProductDesignState extends State<ProductDesign> {
                     top: 8,
                     child: InkWell(
                       onTap: () {
-                        widget.productModel.fav = !widget.productModel.fav;
-                        setState(() {});
+                        favFun(productModel);
                       },
                       child: Icon(
-                        Icons.favorite_rounded,
-                        color: widget.productModel.fav
-                            ? Colors.red
-                            : Color.fromARGB(255, 195, 195, 195),
+                        Icons.favorite,
                         size: 25,
+                        color: productModel.fav ? Colors.red : Colors.grey,
                       ),
                     ),
                   )
@@ -69,7 +61,7 @@ class _ProductDesignState extends State<ProductDesign> {
             height: 2,
           ),
           Text(
-            widget.productModel.name,
+            productModel.name,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.left,
@@ -87,7 +79,7 @@ class _ProductDesignState extends State<ProductDesign> {
                 width: 5,
               ),
               Text(
-                '${widget.productModel.rate}',
+                '${productModel.rate}',
                 style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 14,
@@ -99,7 +91,7 @@ class _ProductDesignState extends State<ProductDesign> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                '\$${widget.productModel.newPrice}',
+                '\$${productModel.newPrice}',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
@@ -111,7 +103,7 @@ class _ProductDesignState extends State<ProductDesign> {
                 width: 8,
               ),
               Text(
-                '\$${widget.productModel.oldPrice}',
+                '\$${productModel.oldPrice}',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   decoration: TextDecoration.lineThrough,

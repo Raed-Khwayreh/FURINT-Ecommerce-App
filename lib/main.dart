@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'mainpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Prompt',
       ),
-      home: MyHomePage(),
+      home: MainPage(),
       debugShowCheckedModeBanner: false,
     );
   }
