@@ -13,6 +13,7 @@ class CardDiscount extends StatefulWidget {
 }
 
 class _CardDiscountState extends State<CardDiscount> {
+  bool auto = true;
   int cindex = 0;
   @override
   Widget build(BuildContext context) {
@@ -37,8 +38,8 @@ class _CardDiscountState extends State<CardDiscount> {
               height: 400.0,
               enlargeCenterPage: true,
               viewportFraction: 1,
-              autoPlay: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 500),
+              autoPlay: auto,
+              autoPlayAnimationDuration: Duration(milliseconds: 200),
               pauseAutoPlayInFiniteScroll: true,
               pauseAutoPlayOnManualNavigate: true,
               onPageChanged: (index, c) {
@@ -69,6 +70,19 @@ class _CardDiscountState extends State<CardDiscount> {
                   },
                 ),
               )),
+          Positioned(
+            top: 0,
+            right: 20,
+            child: Switch(
+              activeColor: Colors.white,
+              value: auto,
+              onChanged: (s) {
+                setState(() {
+                  auto = s;
+                });
+              },
+            ),
+          )
         ],
       ),
     );

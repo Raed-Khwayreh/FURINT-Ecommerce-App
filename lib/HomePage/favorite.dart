@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, must_be_immutable
+
 import 'package:firstui_project/HomePage/product/grid.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +11,17 @@ class Favorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Grid(products.where((element) => element.fav).length,
-        products.where((element) => element.fav).toList(), true, favFun);
+    return products.where((element) => element.fav).isEmpty
+        ? Center(
+            child: Text(
+              'There is no favorite items',
+              style: TextStyle(
+                fontSize: 22,
+                color: Colors.grey,
+              ),
+            ),
+          )
+        : Grid(products.where((element) => element.fav).length,
+            products.where((element) => element.fav).toList(), true, favFun);
   }
 }
