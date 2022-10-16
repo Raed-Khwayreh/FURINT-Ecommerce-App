@@ -57,7 +57,7 @@ class _MainPageState extends State<MainPage>
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: NavBar(funPage),
-      appBar: appBarDesign(),
+      appBar: AppBarDesign(),
       body: TabBarView(
         physics: NeverScrollableScrollPhysics(),
         controller: tabController,

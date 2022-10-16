@@ -86,7 +86,10 @@ class _UnderImageState extends State<UnderImage> {
                       },
                       itemCount: 4,
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
                 ],
               ),
             ],
