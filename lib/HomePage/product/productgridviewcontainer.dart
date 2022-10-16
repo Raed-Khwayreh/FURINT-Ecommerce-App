@@ -15,29 +15,37 @@ class ProductGridViewContainer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       height: allSelect ? 920 : calc(),
-      child: Grid(
-          allSelect
-              ? products.length
-              : products
-                  .where((element) => element.category == cateSelect)
-                  .length,
-          allSelect
-              ? products
-              : products
-                  .where((element) => element.category == cateSelect)
-                  .toList(),
-          false,
-          favFun),
+      child:
+          products.where((element) => element.category == cateSelect).isEmpty &&
+                  !allSelect
+              ? Center(
+                  child: Text(
+                    'no items in this category',
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.grey,
+                    ),
+                  ),
+                )
+              : Grid(
+                  allSelect
+                      ? products.length
+                      : products
+                          .where((element) => element.category == cateSelect)
+                          .length,
+                  allSelect
+                      ? products
+                      : products
+                          .where((element) => element.category == cateSelect)
+                          .toList(),
+                  false,
+                  favFun),
     );
   }
 
   double calc() {
-    return products
-                .where((element) => element.category == cateSelect)
-                .length
-                .toDouble() ==
-            0
-        ? 30
+    return products.where((element) => element.category == cateSelect).isEmpty
+        ? 50
         : 306 *
             (products
                                 .where(

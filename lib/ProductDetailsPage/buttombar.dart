@@ -38,7 +38,7 @@ class _ButtomBarDetPageState extends State<ButtomBarDetPage> {
                   InkWell(
                     onTap: () {
                       setState(() {
-                        count != 0 ? {count--} : {};
+                        count != 1 ? {count--} : {};
                       });
                     },
                     child: Icon(Icons.remove),
