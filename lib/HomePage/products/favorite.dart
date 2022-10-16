@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 
-import 'package:firstui_project/HomePage/product/grid.dart';
+import 'package:firstui_project/HomePage/products/grid.dart';
 import 'package:flutter/material.dart';
 
 import '../data/products_data.dart';

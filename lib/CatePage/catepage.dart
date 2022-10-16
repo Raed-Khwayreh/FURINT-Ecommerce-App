@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
 import 'package:firstui_project/HomePage/models/category_model.dart';
-import 'package:firstui_project/HomePage/product/grid.dart';
+import 'package:firstui_project/HomePage/products/grid.dart';
 import 'package:flutter/material.dart';
 
 import '../HomePage/data/products_data.dart';
@@ -50,7 +50,7 @@ class CatePage extends StatelessWidget {
             Icon(
               Icons.search,
               size: 35,
-              color: Colors.amber,
+              color: Color.fromARGB(255, 254, 151, 0),
             ),
           ],
         ),

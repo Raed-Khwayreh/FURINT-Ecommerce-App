@@ -2,9 +2,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:firstui_project/HomePage/data/products_data.dart';
-import 'package:firstui_project/HomePage/product/favorite.dart';
+import 'package:firstui_project/HomePage/products/favorite.dart';
 import 'package:firstui_project/HomePage/models/product_model.dart';
-import 'package:firstui_project/HomePage/product/productgridviewcontainer.dart';
+import 'package:firstui_project/HomePage/products/productgridviewcontainer.dart';
 import 'package:firstui_project/HomePage/home_page.dart';
 import 'package:flutter/material.dart';
 import 'HomePage/app_bar_home.dart';

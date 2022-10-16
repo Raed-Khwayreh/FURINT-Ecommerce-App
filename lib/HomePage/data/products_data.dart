@@ -26,6 +26,17 @@ List<ProductModel> products = [
     category: 'Living Room',
   ),
   ProductModel(
+    name: 'Sink Bathroom cabinet',
+    rate: 4.7,
+    orders: 47,
+    reviews: 152,
+    oldPrice: '150',
+    newPrice: '89',
+    image: 'images/bath2.png',
+    fav: false,
+    category: 'Bathroom',
+  ),
+  ProductModel(
     name: 'Nursery Bunk bed',
     rate: 4.3,
     orders: 90,
@@ -33,7 +44,7 @@ List<ProductModel> products = [
     oldPrice: '300',
     newPrice: '220',
     image: 'images/2.png',
-    fav: true,
+    fav: false,
     category: 'Bedroom',
   ),
   ProductModel(

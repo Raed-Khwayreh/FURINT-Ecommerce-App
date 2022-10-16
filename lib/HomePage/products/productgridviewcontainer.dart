@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:firstui_project/HomePage/data/category_data.dart';
 import 'package:firstui_project/HomePage/data/products_data.dart';
-import 'package:firstui_project/HomePage/product/grid.dart';
+import 'package:firstui_project/HomePage/products/grid.dart';
 import 'package:flutter/material.dart';
 
 class ProductGridViewContainer extends StatelessWidget {
@@ -14,7 +14,12 @@ class ProductGridViewContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      height: allSelect ? 920 : calc(),
+      height: calcultationsForContainerHeight(allSelect
+          ? products.length.toDouble()
+          : products
+              .where((element) => element.category == cateSelect)
+              .length
+              .toDouble()),
       child:
           products.where((element) => element.category == cateSelect).isEmpty &&
                   !allSelect
@@ -43,27 +48,11 @@ class ProductGridViewContainer extends StatelessWidget {
     );
   }
 
-  double calc() {
-    return products.where((element) => element.category == cateSelect).isEmpty
-        ? 50
-        : 306 *
-            (products
-                                .where(
-                                    (element) => element.category == cateSelect)
-                                .length
-                                .toDouble() %
-                            2 !=
-                        0 &&
-                    products
-                            .where((element) => element.category == cateSelect)
-                            .length
-                            .toDouble() !=
-                        1
-                ? products
-                        .where((element) => element.category == cateSelect)
-                        .length
-                        .toDouble() -
-                    1
-                : 1);
+  double calcultationsForContainerHeight(double length) {
+    return allSelect
+        ? 306 * (length / 2).round().toDouble() + length * 3
+        : products.where((element) => element.category == cateSelect).isEmpty
+            ? 50
+            : 306 * (length / 2).round().toDouble() + length * 3;
   }
 }

@@ -6,7 +6,7 @@ import 'DiscountCard/card_discount.dart';
 import 'category/gridviewcate.dart';
 import 'category/listview.dart';
 import 'custom_list.dart';
-import 'product/productgridviewcontainer.dart';
+import 'products/productgridviewcontainer.dart';
 
 class HomePage extends StatelessWidget {
   Function funFav;
