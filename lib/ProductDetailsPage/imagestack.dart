@@ -23,10 +23,15 @@ class StackImage extends StatelessWidget {
               alignment: Alignment.center,
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                  border: Border.all(
+                    color: Color.fromARGB(255, 229, 229, 229),
+                  ),
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(10)),
               child: Icon(
                 Icons.arrow_back_ios_new,
                 size: 18,
+                color: Colors.black,
               ),
             ),
           ),
