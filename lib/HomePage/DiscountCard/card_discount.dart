@@ -52,20 +52,23 @@ class _CardDiscountState extends State<CardDiscount> {
           ),
           Positioned(
               bottom: 3,
-              left: size.width / 2.7,
+              left: size.width / 2.4,
               child: SizedBox(
                 height: 20,
-                width: 125,
+                width: 50,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 255, 255, 255),
+                          color: cindex == index
+                              ? Color.fromARGB(255, 255, 255, 255)
+                              : Color.fromARGB(255, 249, 249, 249)
+                                  .withOpacity(0.6),
                           borderRadius: BorderRadius.circular(50)),
-                      margin: EdgeInsets.symmetric(horizontal: 3, vertical: 5),
-                      width: cindex == index ? 30 : 10,
+                      margin: EdgeInsets.symmetric(horizontal: 3, vertical: 6),
+                      width: 8,
                     );
                   },
                 ),

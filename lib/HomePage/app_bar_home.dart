@@ -18,10 +18,15 @@ AppBar appBarDesign() {
           color: Color.fromARGB(255, 242, 242, 242),
           borderRadius: BorderRadius.circular(15)),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(
+            width: 8,
+          ),
           Icon(
             Icons.search,
             color: Color.fromARGB(255, 210, 210, 210),
+            size: 32,
           ),
           SizedBox(
             width: 15,
