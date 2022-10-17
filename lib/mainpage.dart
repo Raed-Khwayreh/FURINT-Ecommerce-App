@@ -7,6 +7,8 @@ import 'package:firstui_project/HomePage/models/product_model.dart';
 import 'package:firstui_project/HomePage/products/productgridviewcontainer.dart';
 import 'package:firstui_project/HomePage/home_page.dart';
 import 'package:flutter/material.dart';
+import 'Responsive/item1.dart';
+import 'Responsive/item2.dart';
 import 'HomePage/app_bar_home.dart';
 import 'HomePage/DiscountCard/card_discount.dart';
 import 'HomePage/custom_list.dart';
@@ -55,24 +57,50 @@ class _MainPageState extends State<MainPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      bottomNavigationBar: NavBar(funPage),
-      appBar: AppBarDesign(),
-      body: TabBarView(
-        physics: NeverScrollableScrollPhysics(),
-        controller: tabController,
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
+      body: Row(
         children: [
-          HomePage(funList, funFav),
-          Center(
-            child: Text('Orders'),
+          Visibility(
+            visible: MediaQuery.of(context).size.width > 1200,
+            child: Expanded(flex: 2, child: Item1()),
           ),
-          Favorite(funFav),
-          Center(
-            child: Text('Wallet'),
+          Visibility(
+            visible: MediaQuery.of(context).size.width > 600,
+            child: Expanded(
+              flex: MediaQuery.of(context).size.width > 900
+                  ? MediaQuery.of(context).size.width > 1200
+                      ? 2
+                      : 2
+                  : 1,
+              child: Item2(),
+            ),
           ),
-          Center(
-            child: Text('Profile'),
-          ),
+          Expanded(
+              flex: MediaQuery.of(context).size.width > 900 ? 3 : 2,
+              child: Scaffold(
+                backgroundColor: Colors.white,
+                bottomNavigationBar: NavBar(funPage),
+                appBar: AppBarDesign(),
+                body: TabBarView(
+                  physics: NeverScrollableScrollPhysics(),
+                  controller: tabController,
+                  children: [
+                    HomePage(funList, funFav),
+                    Center(
+                      child: Text('Orders'),
+                    ),
+                    Favorite(funFav),
+                    Center(
+                      child: Text('Wallet'),
+                    ),
+                    Center(
+                      child: Text('Profile'),
+                    ),
+                  ],
+                ),
+              ))
         ],
       ),
     );
