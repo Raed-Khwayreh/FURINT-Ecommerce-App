@@ -20,14 +20,7 @@ class Grid extends StatelessWidget {
           : NeverScrollableScrollPhysics(),
       padding: physics ? EdgeInsets.all(15) : EdgeInsets.all(0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: MediaQuery.of(context).size.width < 550
-            ? 2
-            : MediaQuery.of(context).size.width > 900
-                ? 5
-                : MediaQuery.of(context).size.width > 700 &&
-                        MediaQuery.of(context).size.width < 900
-                    ? 4
-                    : 3,
+        crossAxisCount: MediaQuery.of(context).size.width < 650 ? 2 : 3,
         crossAxisSpacing: 6,
         mainAxisSpacing: 15,
         mainAxisExtent: 300,

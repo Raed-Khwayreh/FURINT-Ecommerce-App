@@ -18,10 +18,10 @@ class _CardDiscountState extends State<CardDiscount> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    List<Stack> l = [
-      stackDesign('images/chair.png', '40'),
-      stackDesign('images/12.png', '20'),
-      stackDesign('images/1.png', '15'),
+    List<Widget> stackImages = [
+      StackDesign('images/chair.png', '40'),
+      StackDesign('images/12.png', '20'),
+      StackDesign('images/1.png', '15'),
     ];
     return Container(
       height: 180,
@@ -48,11 +48,15 @@ class _CardDiscountState extends State<CardDiscount> {
                 });
               },
             ),
-            items: l,
+            items: stackImages,
           ),
           Positioned(
               bottom: 3,
-              left: size.width / 2.4,
+              left: MediaQuery.of(context).size.width < 600
+                  ? MediaQuery.of(context).size.width * 0.4
+                  : MediaQuery.of(context).size.width > 1200
+                      ? MediaQuery.of(context).size.width * 0.2
+                      : MediaQuery.of(context).size.width * 0.3,
               child: SizedBox(
                 height: 20,
                 width: 50,
