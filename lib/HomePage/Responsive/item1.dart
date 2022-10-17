@@ -24,7 +24,6 @@ class Item1 extends StatelessWidget {
     return Column(
       children: [
         UserAccountsDrawerHeader(
-          margin: EdgeInsets.only(right: 15),
           currentAccountPicture: CircleAvatar(
             backgroundColor: Color.fromARGB(175, 255, 205, 131),
             child: Text("R",
