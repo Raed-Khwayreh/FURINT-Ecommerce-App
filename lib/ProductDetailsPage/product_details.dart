@@ -28,8 +28,11 @@ class ProductDetails extends StatelessWidget {
       ),
       body: Row(
         children: [
-          Expanded(child: Item1()),
+          Visibility(
+              visible: MediaQuery.of(context).size.width > 650,
+              child: Expanded(flex: 1, child: Item1())),
           Expanded(
+            flex: 2,
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
