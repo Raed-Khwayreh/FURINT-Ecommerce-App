@@ -3,8 +3,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../data/category_data.dart';
-import '../models/category_model.dart';
+import '../../data/category_data.dart';
+import '../../models/category_model.dart';
 
 class ListViewItem extends StatefulWidget {
   Function fun;

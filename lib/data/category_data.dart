@@ -1,4 +1,4 @@
-import 'package:firstui_project/HomePage/models/category_model.dart';
+import 'package:firstui_project/models/category_model.dart';
 
 List<CateModel> category = [
   CateModel(image: '', name: 'All', isSelected: true),

@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../HomePage/data/products_data.dart';
-import '../HomePage/models/product_model.dart';
+import '../data/products_data.dart';
+import '../models/product_model.dart';
 
 class UnderImage extends StatefulWidget {
   ProductModel productModel;

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable,prefer_const_literals_to_create_immutables
 import 'package:firstui_project/CatePage/catepage.dart';
-import 'package:firstui_project/HomePage/models/category_model.dart';
+import 'package:firstui_project/models/category_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

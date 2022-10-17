@@ -1,10 +1,10 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
-import 'package:firstui_project/HomePage/models/category_model.dart';
+import 'package:firstui_project/models/category_model.dart';
 import 'package:firstui_project/HomePage/products/grid.dart';
 import 'package:flutter/material.dart';
 
-import '../HomePage/data/products_data.dart';
+import '../data/products_data.dart';
 
 class CatePage extends StatelessWidget {
   CateModel cateModel;

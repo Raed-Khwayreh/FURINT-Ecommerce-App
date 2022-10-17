@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable,prefer_const_literals_to_create_immutables
 
-import 'package:firstui_project/Responsive/item1.dart';
-import 'package:firstui_project/Responsive/item2.dart';
 import 'package:flutter/material.dart';
 import 'DiscountCard/card_discount.dart';
 import 'category/gridviewcate.dart';

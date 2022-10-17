@@ -3,7 +3,7 @@
 import 'package:firstui_project/HomePage/products/grid.dart';
 import 'package:flutter/material.dart';
 
-import '../data/products_data.dart';
+import '../../data/products_data.dart';
 
 class Favorite extends StatelessWidget {
   Function favFun;

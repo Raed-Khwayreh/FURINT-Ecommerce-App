@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
-import 'package:firstui_project/HomePage/models/product_model.dart';
+import 'package:firstui_project/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class StackImage extends StatelessWidget {

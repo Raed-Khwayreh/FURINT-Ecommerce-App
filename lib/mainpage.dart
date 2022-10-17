@@ -1,19 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'package:firstui_project/HomePage/data/products_data.dart';
+import 'package:firstui_project/data/products_data.dart';
 import 'package:firstui_project/HomePage/products/favorite.dart';
-import 'package:firstui_project/HomePage/models/product_model.dart';
+import 'package:firstui_project/models/product_model.dart';
 import 'package:firstui_project/HomePage/products/productgridviewcontainer.dart';
 import 'package:firstui_project/HomePage/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'Responsive/item1.dart';
 import 'Responsive/item2.dart';
 import 'HomePage/app_bar_home.dart';
 import 'HomePage/DiscountCard/card_discount.dart';
 import 'HomePage/custom_list.dart';
 import 'HomePage/category/gridviewcate.dart';
-import 'HomePage/data/category_data.dart';
+import 'data/category_data.dart';
 import 'HomePage/category/listview.dart';
 import 'HomePage/navigationbar.dart';
 
@@ -59,12 +60,20 @@ class _MainPageState extends State<MainPage>
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
+        systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.white,
+            statusBarIconBrightness: Brightness.dark),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
       body: Row(
         children: [
           Visibility(
             visible: MediaQuery.of(context).size.width > 1200,
-            child: Expanded(flex: 2, child: Item1()),
+            child: Expanded(
+              flex: 2,
+              child: Item1(),
+            ),
           ),
           Visibility(
             visible: MediaQuery.of(context).size.width > 600,
@@ -78,7 +87,11 @@ class _MainPageState extends State<MainPage>
             ),
           ),
           Expanded(
-              flex: MediaQuery.of(context).size.width > 900 ? 3 : 2,
+              flex: MediaQuery.of(context).size.width > 1200
+                  ? 4
+                  : MediaQuery.of(context).size.width > 900
+                      ? 3
+                      : 2,
               child: Scaffold(
                 backgroundColor: Colors.white,
                 bottomNavigationBar: NavBar(funPage),

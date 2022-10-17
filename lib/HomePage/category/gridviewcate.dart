@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../data/category_data.dart';
+import '../../data/category_data.dart';
 import 'categriditem.dart';
 
 class CategoryGridView extends StatelessWidget {

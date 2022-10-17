@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 import '../CatePage/catepage.dart';
-import '../HomePage/data/category_data.dart';
-import '../HomePage/models/category_model.dart';
+import '../data/category_data.dart';
+import '../models/category_model.dart';
 
 class Item2 extends StatelessWidget {
   const Item2({super.key});
