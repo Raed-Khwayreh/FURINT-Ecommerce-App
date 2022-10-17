@@ -10,7 +10,7 @@ class Grid extends StatelessWidget {
   List<ProductModel> list;
   bool physics;
   Function favFun;
-  Grid(this.count, this.list, this.physics,this.favFun, {super.key});
+  Grid(this.count, this.list, this.physics, this.favFun, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,14 @@ class Grid extends StatelessWidget {
           : NeverScrollableScrollPhysics(),
       padding: physics ? EdgeInsets.all(15) : EdgeInsets.all(0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+        crossAxisCount: MediaQuery.of(context).size.width < 550
+            ? 2
+            : MediaQuery.of(context).size.width > 900
+                ? 5
+                : MediaQuery.of(context).size.width > 700 &&
+                        MediaQuery.of(context).size.width < 900
+                    ? 4
+                    : 3,
         crossAxisSpacing: 6,
         mainAxisSpacing: 15,
         mainAxisExtent: 300,

@@ -24,7 +24,9 @@ class ProductDesign extends StatelessWidget {
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: MediaQuery.of(context).size.width < 800
+            ? CrossAxisAlignment.start
+            : CrossAxisAlignment.center,
         children: [
           Container(
               width: 174,
@@ -60,12 +62,15 @@ class ProductDesign extends StatelessWidget {
           SizedBox(
             height: 2,
           ),
-          Text(
-            productModel.name,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+          SizedBox(
+            width: double.infinity,
+            child: Text(
+              productModel.name,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+            ),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
