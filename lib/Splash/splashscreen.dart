@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, file_names
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:firstui_project/Login/letsgo.dart';
 import 'package:firstui_project/mainpage.dart';
 import 'package:flutter/material.dart';
 
@@ -27,40 +28,46 @@ class Splash extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Welcome To",
-                    style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: "Prompt",
-                        color: Color.fromARGB(255, 255, 255, 255)),
-                  ),
-                  Text(
+                  textStyle(
+                      "Welcome To", 25, FontWeight.normal, Colors.white, false),
+                  textStyle(
                     "FURINT\nSHOP",
-                    style: TextStyle(
-                        fontSize: 60,
-                        fontFamily: "Prompt",
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        fontWeight: FontWeight.bold),
+                    60,
+                    FontWeight.bold,
+                    Colors.white,
+                    false,
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 1.1,
-                    child: Text(
+                    child: textStyle(
                       "A big world of selling furniture and everything you need when preparing your home",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: "Prompt",
-                          color: Color.fromARGB(255, 141, 84, 4),
-                          fontWeight: FontWeight.w300),
+                      15,
+                      FontWeight.w300,
+                      Color.fromARGB(255, 141, 84, 4),
+                      true,
                     ),
                   ),
                 ],
               )),
         ],
       ),
-      nextScreen: MainPage(),
-      duration: 3500,
+      nextScreen: LetsGo(),
+      duration: 2500,
       backgroundColor: Colors.white,
+    );
+  }
+
+  Text textStyle(
+      String text, double size, FontWeight fontWeight, Color color, bool flag) {
+    return Text(
+      text,
+      textAlign: flag ? TextAlign.center : TextAlign.start,
+      style: TextStyle(
+        fontSize: size,
+        fontFamily: "Prompt",
+        color: color,
+        fontWeight: fontWeight,
+      ),
     );
   }
 }
