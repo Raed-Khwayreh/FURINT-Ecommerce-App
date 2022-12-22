@@ -17,7 +17,6 @@ class _CardDiscountState extends State<CardDiscount> {
   int cindex = 0;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     List<Widget> stackImages = [
       StackDesign('images/chair.png', '40'),
       StackDesign('images/12.png', '20'),
@@ -64,7 +63,7 @@ class _CardDiscountState extends State<CardDiscount> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return Container(
+                    return AnimatedContainer(
                       decoration: BoxDecoration(
                           color: cindex == index
                               ? Color.fromARGB(255, 255, 255, 255)
@@ -72,7 +71,8 @@ class _CardDiscountState extends State<CardDiscount> {
                                   .withOpacity(0.6),
                           borderRadius: BorderRadius.circular(50)),
                       margin: EdgeInsets.symmetric(horizontal: 3, vertical: 6),
-                      width: 8,
+                      width: cindex == index ? 15 : 8,
+                      duration: Duration(milliseconds: 250),
                     );
                   },
                 ),
