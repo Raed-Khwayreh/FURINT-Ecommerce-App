@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "709745703258",
+    "project_id": "furint-d4c5c",
+    "storage_bucket": "furint-d4c5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709745703258:android:46f8a4be87379b75705b63",
+        "android_client_info": {
+          "package_name": "com.example.firstui_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709745703258-rhm24v0icohn659udimm9lgb3s21pie3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPRNUu0tz1DaPzNTv4hOAKkD9McVZbA9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709745703258-rhm24v0icohn659udimm9lgb3s21pie3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "709745703258-9bh7e2dlck0nmmbv017p9egs9e6o8to0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firstuiProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

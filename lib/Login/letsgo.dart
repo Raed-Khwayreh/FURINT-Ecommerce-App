@@ -2,9 +2,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'dart:developer';
 
+import 'package:firstui_project/Helpers/authhelper.dart';
 import 'package:firstui_project/Login/signin.dart';
 import 'package:firstui_project/Login/signup.dart';
 import 'package:flutter/material.dart';
+
+import '../slideanimation.dart';
 
 class LetsGo extends StatelessWidget {
   const LetsGo({super.key});
@@ -35,11 +38,10 @@ class LetsGo extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
+                  AuthHelper.authHelper.signUp("email@gmail.com", "password");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => SignIn(),
-                    ),
+                    SliderAnimation(Page: SignIn()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -76,9 +78,7 @@ class LetsGo extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => SignUp(),
-                          ),
+                          SliderAnimation(Page: SignUp()),
                         );
                       },
                       child: textStyle(

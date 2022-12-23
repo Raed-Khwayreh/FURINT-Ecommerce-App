@@ -52,8 +52,7 @@ class Splash extends StatelessWidget {
         ],
       ),
       nextScreen: LetsGo(),
-      duration: 2500,
-      backgroundColor: Colors.white,
+      duration: 3000,
     );
   }
 
