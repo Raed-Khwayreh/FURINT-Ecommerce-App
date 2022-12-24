@@ -67,16 +67,16 @@ class FirestoreHelper {
   }
 
   Future<bool?> updateCategory(CateModel category) async {
-    // try {
-    //   await firestore
-    //       .collection('categories')
-    //       .doc(category.id)
-    //       .update(category.toMap());
-    //   return true;
-    // } on Exception catch (e) {
-    //   log(e.toString());
-    //   return false;
-    // }
+    try {
+      await firestore
+          .collection('categories')
+          .doc(category.id)
+          .update(category.toMap());
+      return true;
+    } on Exception catch (e) {
+      log(e.toString());
+      return false;
+    }
   }
 
   /// products functions

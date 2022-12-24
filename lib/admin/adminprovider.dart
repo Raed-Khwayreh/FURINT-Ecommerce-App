@@ -79,32 +79,28 @@ class AdminProvider extends ChangeNotifier {
   //   // AppRouter.appRouter.goToWidget(EditCategory(category));
   // }
 
-  // updateCategory(CateModel category) async {
-  //   if (imageFile != null) {
-  //     String imageUrl = await StorageHelper.storageHelper
-  //         .uploadNewImage("cats_images", imageFile!);
-  //     category.image = imageUrl;
-  //   }
-  //   CateModel newCategory = CateModel(
-  //     id: category.id,
-  //     image: category.image,
-  //     name: catNameArController.text.isEmpty
-  //         ? category.image
-  //         : catNameArController.text,
-  //   );
+  updateCategory(CateModel category, String name) async {
+    if (imageFile != null) {
+      String imageUrl = await StorageHelper.storageHelper
+          .uploadNewImage("cats_images", imageFile!);
+      category.image = imageUrl;
+    }
+    CateModel newCategory = CateModel(
+      id: category.id,
+      image: category.image,
+      name: name,
+    );
 
-  //   bool? isUpdated =
-  //       await FirestoreHelper.firestoreHelper.updateCategory(newCategory);
+    bool? isUpdated =
+        await FirestoreHelper.firestoreHelper.updateCategory(newCategory);
 
-  //   if (isUpdated != null && isUpdated) {
-  //     int index = allCategories!.indexOf(category);
-  //     allCategories![index] = newCategory;
-  //     imageFile = null;
-  //     catNameEnController.clear();
-  //     catNameArController.clear();
-  //     notifyListeners();
-  //   }
-  // }
+    if (isUpdated != null && isUpdated) {
+      int index = allCategories.indexOf(category);
+      allCategories[index] = newCategory;
+      imageFile = null;
+      notifyListeners();
+    }
+  }
 
   TextEditingController productNameController = TextEditingController();
   TextEditingController productDescriptionController = TextEditingController();

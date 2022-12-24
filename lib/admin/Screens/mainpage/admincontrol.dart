@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:firstui_project/admin/Screens/addCategoryPage/addCate.dart';
+import 'package:firstui_project/admin/Screens/display/displaycategories.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Helpers/slideanimation.dart';
@@ -13,6 +14,19 @@ class AdminControl extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  SliderAnimation(Page: AllCategoriesScreen()),
+                );
+              },
+              child: Icon(Icons.category)),
+          SizedBox(
+            width: 25,
+          )
+        ],
         title: Text("Admin Control"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 254, 151, 0),
