@@ -31,7 +31,6 @@ class _NavBarState extends State<NavBar> {
         bottomItem('Home', Icons.grid_view_rounded),
         bottomItem('Orders', Icons.shopping_cart_rounded),
         bottomItem('Favorite', Icons.favorite),
-        bottomItem('Wallet', Icons.wallet),
         bottomItem('Profile', Icons.person),
       ],
     );

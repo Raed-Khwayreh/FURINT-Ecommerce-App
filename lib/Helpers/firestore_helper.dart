@@ -31,10 +31,10 @@ class FirestoreHelper {
   //// admin methods
   Future<String?> addNewCategory(CateModel category) async {
     try {
-      // DocumentReference<Map<String, dynamic>> categoryDocument =
-      //     await firestore.collection('categories').add(category.toMap());
+      DocumentReference<Map<String, dynamic>> categoryDocument =
+          await firestore.collection('categories').add(category.toMap());
 
-      // return categoryDocument.id;
+      return categoryDocument.id;
     } on Exception catch (e) {
       log(e.toString());
     }

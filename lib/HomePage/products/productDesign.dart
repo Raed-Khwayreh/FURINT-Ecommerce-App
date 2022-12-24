@@ -53,7 +53,7 @@ class ProductDesign extends StatelessWidget {
                       child: Icon(
                         Icons.favorite,
                         size: 25,
-                        color: productModel.fav ? Colors.red : Colors.grey,
+                        color: productModel.fav! ? Colors.red : Colors.grey,
                       ),
                     ),
                   )

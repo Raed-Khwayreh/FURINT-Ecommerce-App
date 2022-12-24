@@ -2,11 +2,12 @@
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firstui_project/Login/letsgo.dart';
+import 'package:firstui_project/admin/Screens/mainpage/admincontrol.dart';
 import 'package:firstui_project/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Providers/signprovider.dart';
+import '../User Providers/signprovider.dart';
 
 class Splash extends StatelessWidget {
   Splash({Key? key}) : super(key: key);
@@ -54,7 +55,8 @@ class Splash extends StatelessWidget {
               )),
         ],
       ),
-      nextScreen: Provider.of<SignProvider>(context, listen: false).w,
+      nextScreen: // Provider.of<SignProvider>(context, listen: false).w,
+          AdminControl(),
       duration: 3000,
     );
   }

@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage>
 
   funFav(ProductModel productModel) {
     int i = products.indexOf(productModel);
-    products[i].fav = !products[i].fav;
+    products[i].fav = !products[i].fav!;
     setState(() {});
   }
 

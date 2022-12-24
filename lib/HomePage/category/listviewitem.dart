@@ -16,7 +16,6 @@ class ListViewItem extends StatefulWidget {
 }
 
 class _ListViewItemState extends State<ListViewItem> {
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -37,7 +36,7 @@ class _ListViewItemState extends State<ListViewItem> {
         padding: EdgeInsets.symmetric(horizontal: 20),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: widget.cateModel.isSelected
+          color: widget.cateModel.isSelected!
               ? Color.fromARGB(255, 254, 151, 0)
               : Colors.white,
           borderRadius: BorderRadius.circular(25),
@@ -47,7 +46,7 @@ class _ListViewItemState extends State<ListViewItem> {
         child: Text(
           widget.cateModel.name,
           style: TextStyle(
-              color: widget.cateModel.isSelected ? Colors.white : Colors.black,
+              color: widget.cateModel.isSelected! ? Colors.white : Colors.black,
               fontSize: 15,
               fontWeight: FontWeight.w300),
         ),

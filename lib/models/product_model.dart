@@ -1,21 +1,24 @@
 class ProductModel {
+  String? id;
   String name;
-  double rate;
-  int reviews;
-  int orders;
+  double? rate;
+  int? reviews;
+  int? orders;
   String oldPrice;
   String newPrice;
   String image;
-  bool fav;
-  String category;
+  bool? fav;
+  String? catId;
+  String? category;
   ProductModel(
       {required this.name,
-      required this.rate,
-      required this.orders,
-      required this.reviews,
+      this.rate,
+      this.orders,
+      this.reviews,
       required this.oldPrice,
       required this.newPrice,
       required this.image,
-      required this.fav,
-      required this.category});
+      this.fav,
+      required this.category,
+      this.catId});
 }

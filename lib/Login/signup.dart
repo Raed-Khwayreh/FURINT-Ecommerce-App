@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Helpers/funvalid.dart';
-import '../Providers/signprovider.dart';
+import '../User Providers/signprovider.dart';
 import '../mainpage.dart';
 import '../Helpers/slideanimation.dart';
 

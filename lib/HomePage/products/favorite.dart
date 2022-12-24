@@ -11,7 +11,7 @@ class Favorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return products.where((element) => element.fav).isEmpty
+    return products.where((element) => element.fav!).isEmpty
         ? Center(
             child: Text(
               'There is no favorite items',
@@ -21,7 +21,7 @@ class Favorite extends StatelessWidget {
               ),
             ),
           )
-        : Grid(products.where((element) => element.fav).length,
-            products.where((element) => element.fav).toList(), true, favFun);
+        : Grid(products.where((element) => element.fav!).length,
+            products.where((element) => element.fav!).toList(), true, favFun);
   }
 }

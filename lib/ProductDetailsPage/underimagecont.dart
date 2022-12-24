@@ -98,7 +98,7 @@ class _UnderImageState extends State<UnderImage> {
           Row(
             children: [
               RatingBarIndicator(
-                rating: widget.productModel.rate,
+                rating: widget.productModel.rate!,
                 direction: Axis.horizontal,
                 itemCount: 5,
                 itemSize: 25,

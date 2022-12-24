@@ -5,8 +5,7 @@ import 'package:firstui_project/UserPage/profilesettings.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Providers/signprovider.dart';
-import '../mainpage.dart';
+import '../User Providers/signprovider.dart';
 import '../Helpers/slideanimation.dart';
 
 class ProfilePage extends StatelessWidget {

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:firstui_project/Login/letsgo.dart';
-import 'package:firstui_project/Providers/signprovider.dart';
+import 'package:firstui_project/User%20Providers/signprovider.dart';
 import 'package:firstui_project/Splash/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

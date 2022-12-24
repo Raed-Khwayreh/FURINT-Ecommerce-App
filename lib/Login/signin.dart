@@ -8,7 +8,7 @@ import 'package:firstui_project/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Providers/signprovider.dart';
+import '../User Providers/signprovider.dart';
 import '../Helpers/slideanimation.dart';
 
 class SignIn extends StatelessWidget {
@@ -105,9 +105,10 @@ class SignIn extends StatelessWidget {
                   onPressed: () async {
                     if (formstate.currentState!.validate()) {
                       if (await provider.signIn(email.text, password.text)) {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                           context,
                           SliderAnimation(Page: MainPage()),
+                          (route) => route.isFirst,
                         );
                       }
                     }
