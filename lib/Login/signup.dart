@@ -135,10 +135,13 @@ class SignUp extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     if (formstate.currentState!.validate()) {
-                      Navigator.push(
-                        context,
-                        SliderAnimation(Page: MainPage()),
-                      );
+                      if (provider.signUp(
+                          name.text, email.text, phone.text, password.text)) {
+                        Navigator.push(
+                          context,
+                          SliderAnimation(Page: MainPage()),
+                        );
+                      }
                     }
                   },
                   style: ElevatedButton.styleFrom(
