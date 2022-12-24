@@ -94,19 +94,17 @@ class FirestoreHelper {
     }
   }
 
-  Future<List<ProductModel>?> getAllProducts(String catId) async {
+  Future<List<ProductModel>> getAllProducts(String catId) async {
     QuerySnapshot<Map<String, dynamic>> querySnapshot = await firestore
         .collection('categories')
         .doc(catId)
         .collection('products')
         .get();
-    // return querySnapshot.docs.map((e) {
-    //   ProductModel product = ProductModel.fromMap(e.data());
-    //   product.id = e.id;
-    //   return product;
-    // }).toList();
+    return querySnapshot.docs.map((e) {
+      ProductModel product = ProductModel.fromMap(e.data());
+      product.id = e.id;
+      return product;
+    }).toList();
   }
 
-  Future<bool?> deleteProduct(ProductModel product) async {}
-  Future<bool?> updateProduct(ProductModel product) async {}
 }

@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_adjacent_string_concatenation
+// ignore_for_file: prefer_const_constructors, prefer_adjacent_string_concatenation, use_key_in_widget_constructors
 
+import 'package:firstui_project/admin/Screens/display/displayproduts.dart';
 import 'package:firstui_project/admin/Screens/display/editcat.dart';
 import 'package:firstui_project/models/category_model.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +14,14 @@ class CategoryWidget extends StatelessWidget {
   CategoryWidget(this.category);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return InkWell(
       onTap: () {
-        // Provider.of<AdminProvider>(context, listen: false)
-        //     .getAllProducts(category.id!);
-        // AppRouter.appRouter.goToWidget(AllProductsScreen());
+        Provider.of<AdminProvider>(context, listen: false)
+            .getAllProducts(category.id!);
+        Navigator.push(
+          context,
+          SliderAnimation(Page: AllProductsScreen()),
+        );
       },
       child: Container(
         margin: EdgeInsets.fromLTRB(20, 20, 20, 5),

@@ -30,7 +30,6 @@ class AdminProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // get cateogies
   List<CateModel> allCategories = [];
   addNewCategory(String name) async {
     if (imageFile != null) {
@@ -58,7 +57,6 @@ class AdminProvider extends ChangeNotifier {
     }
   }
 
-  List<ProductModel> allProducts = [];
   getAllCategories() async {
     allCategories = await FirestoreHelper.firestoreHelper.getAllCategories();
     notifyListeners();
@@ -73,11 +71,6 @@ class AdminProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
-
-  // goToEditCategoryPage(CateModel category) {
-  //   catNameArController.text = category.name;
-  //   // AppRouter.appRouter.goToWidget(EditCategory(category));
-  // }
 
   updateCategory(CateModel category, String name) async {
     if (imageFile != null) {
@@ -106,6 +99,7 @@ class AdminProvider extends ChangeNotifier {
   TextEditingController productDescriptionController = TextEditingController();
   TextEditingController productPriceController = TextEditingController();
   GlobalKey<FormState> addProductKey = GlobalKey();
+  List<ProductModel> allProducts = [];
   addNewProduct(String catId) async {
     if (imageFile != null) {
       if (addProductKey.currentState!.validate()) {
@@ -136,13 +130,13 @@ class AdminProvider extends ChangeNotifier {
     } else {}
   }
 
-  // getAllProducts(String catId) async {
-  //   allProducts = null;
-  //   notifyListeners();
-  //   List<ProductModel>? products =
-  //       await FirestoreHelper.firestoreHelper.getAllProducts(catId);
+  getAllProducts(String catId) async {
+    allProducts = [];
+    notifyListeners();
+    List<ProductModel> products =
+        await FirestoreHelper.firestoreHelper.getAllProducts(catId);
 
-  //   allProducts = products;
-  //   notifyListeners();
-  // }
+    allProducts = products;
+    notifyListeners();
+  }
 }
