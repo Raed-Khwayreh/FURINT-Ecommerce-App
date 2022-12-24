@@ -50,19 +50,20 @@ class FirestoreHelper {
     }
   }
 
-  Future<List<CateModel>?> getAllCategories() async {
-    // try {
-    //   QuerySnapshot<Map<String, dynamic>> catsSnapshot =
-    //       await firestore.collection('categories').get();
-    //   List<CateModel> categories = catsSnapshot.docs.map((doc) {
-    //     CateModel category = CateModel.fromMap(doc.data());
-    //     category.id = doc.id;
-    //     return category;
-    //   }).toList();
-    //   return categories;
-    // } on Exception catch (e) {
-    //   log(e.toString());
-    // }
+  Future<List<CateModel>> getAllCategories() async {
+    try {
+      QuerySnapshot<Map<String, dynamic>> catsSnapshot =
+          await firestore.collection('categories').get();
+      List<CateModel> categories = catsSnapshot.docs.map((doc) {
+        CateModel category = CateModel.fromMap(doc.data());
+        category.id = doc.id;
+        return category;
+      }).toList();
+      return categories;
+    } on Exception catch (e) {
+      log(e.toString());
+    }
+    return [];
   }
 
   Future<bool?> updateCategory(CateModel category) async {
@@ -108,7 +109,4 @@ class FirestoreHelper {
 
   Future<bool?> deleteProduct(ProductModel product) async {}
   Future<bool?> updateProduct(ProductModel product) async {}
-  
-
-  
 }

@@ -3,6 +3,7 @@
 import 'package:firstui_project/Login/letsgo.dart';
 import 'package:firstui_project/User%20Providers/signprovider.dart';
 import 'package:firstui_project/Splash/splashscreen.dart';
+import 'package:firstui_project/admin/adminprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,7 +22,22 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<SignProvider>(
+        create: (context) {
+          return SignProvider();
+        },
+      ),
+      ChangeNotifierProvider<AdminProvider>(
+        create: (context) {
+          return AdminProvider();
+        },
+      ),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,18 +46,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<SignProvider>(
-      create: (context) {
-        return SignProvider();
-       
-      },
-      child: MaterialApp(
-        theme: ThemeData(
-          fontFamily: 'Prompt',
-        ),
-        home: Splash(),
-        debugShowCheckedModeBanner: false,
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Prompt',
       ),
+      home: Splash(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

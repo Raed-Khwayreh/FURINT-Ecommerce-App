@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 // ignore_for_file: prefer_const_literals_to_create_immutables
+import 'package:firstui_project/admin/Screens/addCategoryPage/addCate.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Helpers/slideanimation.dart';
 import 'containerdesign.dart';
 
 class AdminControl extends StatelessWidget {
@@ -21,7 +23,14 @@ class AdminControl extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            ContDesign("Add New Category"),
+            InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    SliderAnimation(Page: AddCate()),
+                  );
+                },
+                child: ContDesign("Add New Category")),
             ContDesign("Add New Product"),
             ContDesign("Add New Offer"),
             SizedBox(

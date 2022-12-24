@@ -12,10 +12,8 @@ class AdminProvider extends ChangeNotifier {
   AdminProvider() {
     getAllCategories();
   }
-  
+
   File? imageFile;
-  TextEditingController catNameArController = TextEditingController();
-  TextEditingController catNameEnController = TextEditingController();
   GlobalKey<FormState> categoryFormKey = GlobalKey<FormState>();
   pickImageForCategory() async {
     XFile? pickedFile =
@@ -26,35 +24,41 @@ class AdminProvider extends ChangeNotifier {
     }
   }
 
-  addNewCategory() async {
-    if (imageFile != null) {
-      if (categoryFormKey.currentState!.validate()) {
-        // add category process
+  clearImage() {
+    imageFile = null;
 
-        String imageUrl = await StorageHelper.storageHelper
-            .uploadNewImage("cats_images", imageFile!);
-        CateModel category = CateModel(
-            image: imageUrl, name: catNameArController.text, isSelected: false);
-
-        String? id =
-            await FirestoreHelper.firestoreHelper.addNewCategory(category);
-
-        if (id != null) {
-          category.id = id;
-          allCategories!.add(category);
-          notifyListeners();
-          catNameArController.clear();
-          catNameEnController.clear();
-          imageFile = null;
-          notifyListeners();
-        }
-      }
-    } else {}
+    notifyListeners();
   }
 
   // get cateogies
-  List<CateModel>? allCategories;
-  List<ProductModel>? allProducts;
+  List<CateModel> allCategories = [];
+  addNewCategory(String name) async {
+    if (imageFile != null) {
+      String imageUrl = await StorageHelper.storageHelper
+          .uploadNewImage("cats_images", imageFile!);
+      CateModel category =
+          CateModel(image: imageUrl, name: name, isSelected: false);
+
+      String? id =
+          await FirestoreHelper.firestoreHelper.addNewCategory(category);
+
+      if (id != null) {
+        category.id = id;
+
+        notifyListeners();
+        imageFile = null;
+
+        notifyListeners();
+        allCategories
+            .add(CateModel(image: imageUrl, name: name, isSelected: false));
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  List<ProductModel> allProducts = [];
   getAllCategories() async {
     allCategories = await FirestoreHelper.firestoreHelper.getAllCategories();
     notifyListeners();
@@ -65,45 +69,43 @@ class AdminProvider extends ChangeNotifier {
     bool deleteSuccess =
         await FirestoreHelper.firestoreHelper.deleteCategoey(category.id!);
     if (deleteSuccess) {
-      allCategories!.remove(category);
+      allCategories.remove(category);
       notifyListeners();
     }
   }
 
-  goToEditCategoryPage(CateModel category) {
-    catNameArController.text = category.name;
-    // AppRouter.appRouter.goToWidget(EditCategory(category));
-  }
+  // goToEditCategoryPage(CateModel category) {
+  //   catNameArController.text = category.name;
+  //   // AppRouter.appRouter.goToWidget(EditCategory(category));
+  // }
 
-  updateCategory(CateModel category) async {
-    if (imageFile != null) {
-      String imageUrl = await StorageHelper.storageHelper
-          .uploadNewImage("cats_images", imageFile!);
-      category.image = imageUrl;
-    }
-    CateModel newCategory = CateModel(
-      id: category.id,
-      image: category.image,
-      name: catNameArController.text.isEmpty
-          ? category.image
-          : catNameArController.text,
-    );
+  // updateCategory(CateModel category) async {
+  //   if (imageFile != null) {
+  //     String imageUrl = await StorageHelper.storageHelper
+  //         .uploadNewImage("cats_images", imageFile!);
+  //     category.image = imageUrl;
+  //   }
+  //   CateModel newCategory = CateModel(
+  //     id: category.id,
+  //     image: category.image,
+  //     name: catNameArController.text.isEmpty
+  //         ? category.image
+  //         : catNameArController.text,
+  //   );
 
-    bool? isUpdated =
-        await FirestoreHelper.firestoreHelper.updateCategory(newCategory);
+  //   bool? isUpdated =
+  //       await FirestoreHelper.firestoreHelper.updateCategory(newCategory);
 
-    if (isUpdated != null && isUpdated) {
-      int index = allCategories!.indexOf(category);
-      allCategories![index] = newCategory;
-      imageFile = null;
-      catNameEnController.clear();
-      catNameArController.clear();
-      notifyListeners();
-    }
-  }
+  //   if (isUpdated != null && isUpdated) {
+  //     int index = allCategories!.indexOf(category);
+  //     allCategories![index] = newCategory;
+  //     imageFile = null;
+  //     catNameEnController.clear();
+  //     catNameArController.clear();
+  //     notifyListeners();
+  //   }
+  // }
 
-  TextEditingController sliderTitleController = TextEditingController();
-  TextEditingController sliderUrlController = TextEditingController();
   TextEditingController productNameController = TextEditingController();
   TextEditingController productDescriptionController = TextEditingController();
   TextEditingController productPriceController = TextEditingController();
@@ -126,7 +128,7 @@ class AdminProvider extends ChangeNotifier {
 
         if (id != null) {
           product.id = id;
-          allProducts?.add(product);
+          allProducts.add(product);
           notifyListeners();
           productNameController.clear();
           productDescriptionController.clear();
@@ -138,13 +140,13 @@ class AdminProvider extends ChangeNotifier {
     } else {}
   }
 
-  getAllProducts(String catId) async {
-    allProducts = null;
-    notifyListeners();
-    List<ProductModel>? products =
-        await FirestoreHelper.firestoreHelper.getAllProducts(catId);
+  // getAllProducts(String catId) async {
+  //   allProducts = null;
+  //   notifyListeners();
+  //   List<ProductModel>? products =
+  //       await FirestoreHelper.firestoreHelper.getAllProducts(catId);
 
-    allProducts = products;
-    notifyListeners();
-  }
+  //   allProducts = products;
+  //   notifyListeners();
+  // }
 }
