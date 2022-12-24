@@ -4,9 +4,12 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firstui_project/Login/letsgo.dart';
 import 'package:firstui_project/mainpage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../Providers/signprovider.dart';
 
 class Splash extends StatelessWidget {
-  const Splash({Key? key}) : super(key: key);
+  Splash({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +54,7 @@ class Splash extends StatelessWidget {
               )),
         ],
       ),
-      nextScreen: LetsGo(),
+      nextScreen: Provider.of<SignProvider>(context, listen: false).w,
       duration: 3000,
     );
   }

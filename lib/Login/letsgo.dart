@@ -7,7 +7,7 @@ import 'package:firstui_project/Login/signin.dart';
 import 'package:firstui_project/Login/signup.dart';
 import 'package:flutter/material.dart';
 
-import '../slideanimation.dart';
+import '../Helpers/slideanimation.dart';
 
 class LetsGo extends StatelessWidget {
   const LetsGo({super.key});
@@ -38,7 +38,6 @@ class LetsGo extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  AuthHelper.authHelper.signUp("email@gmail.com", "password");
                   Navigator.push(
                     context,
                     SliderAnimation(Page: SignIn()),

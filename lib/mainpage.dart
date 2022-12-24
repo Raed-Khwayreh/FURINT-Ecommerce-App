@@ -14,6 +14,7 @@ import 'HomePage/app_bar_home.dart';
 import 'HomePage/DiscountCard/card_discount.dart';
 import 'HomePage/custom_list.dart';
 import 'HomePage/category/gridviewcate.dart';
+import 'UserPage/profilepage.dart';
 import 'data/category_data.dart';
 import 'HomePage/category/listview.dart';
 import 'HomePage/navigationbar.dart';
@@ -47,7 +48,7 @@ class _MainPageState extends State<MainPage>
   late TabController tabController;
   @override
   void initState() {
-    tabController = TabController(length: 5, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
     super.initState();
   }
 
@@ -105,12 +106,7 @@ class _MainPageState extends State<MainPage>
                       child: Text('Orders'),
                     ),
                     Favorite(funFav),
-                    Center(
-                      child: Text('Wallet'),
-                    ),
-                    Center(
-                      child: Text('Profile'),
-                    ),
+                    ProfilePage(),
                   ],
                 ),
               ))

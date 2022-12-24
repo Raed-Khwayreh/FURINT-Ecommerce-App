@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Providers/signprovider.dart';
-import '../slideanimation.dart';
+import '../Helpers/slideanimation.dart';
 
 class SignIn extends StatelessWidget {
   SignIn({super.key});
@@ -102,12 +102,14 @@ class SignIn extends StatelessWidget {
                   height: 30,
                 ),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (formstate.currentState!.validate()) {
-                      Navigator.push(
-                        context,
-                        SliderAnimation(Page: MainPage()),
-                      );
+                      if (await provider.signIn(email.text, password.text)) {
+                        Navigator.push(
+                          context,
+                          SliderAnimation(Page: MainPage()),
+                        );
+                      }
                     }
                   },
                   style: ElevatedButton.styleFrom(

@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import '../Helpers/funvalid.dart';
 import '../Providers/signprovider.dart';
 import '../mainpage.dart';
-import '../slideanimation.dart';
+import '../Helpers/slideanimation.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({super.key});
@@ -133,9 +133,9 @@ class SignUp extends StatelessWidget {
                   height: 30,
                 ),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (formstate.currentState!.validate()) {
-                      if (provider.signUp(
+                      if (await provider.signUp(
                           name.text, email.text, phone.text, password.text)) {
                         Navigator.push(
                           context,

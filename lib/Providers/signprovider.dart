@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'dart:io';
 
+import 'package:firstui_project/Login/letsgo.dart';
+import 'package:firstui_project/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -10,6 +12,10 @@ import '../Helpers/storage_helper.dart';
 import '../models/app_user.dart';
 
 class SignProvider extends ChangeNotifier {
+  SignProvider() {
+    checkUser();
+  }
+  late Widget w;
   AppUser? loggedUser;
   bool hidePassSignIn = true;
   bool hidePassSignUp = true;
@@ -71,16 +77,19 @@ class SignProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  signIn(String email, String password) async {
+  Future<bool> signIn(String email, String password) async {
     String? userId = await AuthHelper.authHelper.signIn(email, password);
     if (userId != null) {
       loggedUser =
           await FirestoreHelper.firestoreHelper.getUserFromFirestore(userId);
       notifyListeners();
+      return true;
     }
+    return false;
   }
 
-  signUp(String name, String email, String phone, String password) async {
+  Future<bool> signUp(
+      String name, String email, String phone, String password) async {
     String? result = await AuthHelper.authHelper.signUp(email, password);
     if (result != null) {
       FirestoreHelper.firestoreHelper.addNewUser(
@@ -93,6 +102,7 @@ class SignProvider extends ChangeNotifier {
       );
       return true;
     }
+    return false;
   }
 
   getUser(String id) async {
@@ -101,12 +111,17 @@ class SignProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  checkUser() async {
+  Future<bool> checkUser() async {
     String? userId = AuthHelper.authHelper.checkUser();
 
     if (userId != null) {
       getUser(userId);
-    } else {}
+      w = MainPage();
+      return true;
+    } else {
+      w = LetsGo();
+      return false;
+    }
   }
 
   signOut() async {
