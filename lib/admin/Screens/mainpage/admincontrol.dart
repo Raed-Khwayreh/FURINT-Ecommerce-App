@@ -45,7 +45,6 @@ class AdminControl extends StatelessWidget {
                   );
                 },
                 child: ContDesign("Add New Category")),
-            ContDesign("Add New Product"),
             ContDesign("Add New Offer"),
             SizedBox(
               height: 15,

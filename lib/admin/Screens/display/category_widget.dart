@@ -20,7 +20,7 @@ class CategoryWidget extends StatelessWidget {
             .getAllProducts(category.id!);
         Navigator.push(
           context,
-          SliderAnimation(Page: AllProductsScreen()),
+          SliderAnimation(Page: AllProductsScreen(category)),
         );
       },
       child: Container(

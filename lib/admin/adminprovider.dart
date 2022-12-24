@@ -9,8 +9,10 @@ import '../Helpers/firestore_helper.dart';
 import '../Helpers/storage_helper.dart';
 
 class AdminProvider extends ChangeNotifier {
+  late String dropdownValue;
   AdminProvider() {
     getAllCategories();
+    dropdownValue = allCategories[0].name;
   }
 
   File? imageFile;
@@ -31,6 +33,7 @@ class AdminProvider extends ChangeNotifier {
   }
 
   List<CateModel> allCategories = [];
+
   addNewCategory(String name) async {
     if (imageFile != null) {
       String imageUrl = await StorageHelper.storageHelper
