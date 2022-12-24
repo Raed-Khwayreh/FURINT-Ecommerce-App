@@ -25,7 +25,7 @@ class CategoryGridItem extends StatelessWidget {
               color: Color.fromARGB(255, 242, 242, 242),
               borderRadius: BorderRadius.circular(7),
             ),
-            child: Image.asset(
+            child: Image.network(
               cateModel.image,
               height: 33,
             ),
