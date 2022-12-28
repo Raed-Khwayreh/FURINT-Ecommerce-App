@@ -28,7 +28,7 @@ and this to check phone number (r"[05][69][23456789][0-9]{6}$") you can use only
 
 after login this is home page that show sliders for offers, categories, products 
 
-<img height=426 width=430 src="https://user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
+<img height=350 width=700 src="https://user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
 
 Categories page, Favorite page, Proudct details page, Profile page, Edit profile page
 
