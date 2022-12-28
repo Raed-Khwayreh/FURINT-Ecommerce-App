@@ -21,7 +21,7 @@ In This project I have used:
 
 
 ## Here is screenshots
-###Splash screen, Sign in ,Sign up
+### Splash screen, Intro Page,Sign up Page, Sign in Page
 
 <p align="center">
 <img height=486 width=987 src="https://user-images.githubusercontent.com/78206754/209866259-a8dc963a-a11b-477f-97a9-476ba395163d.jpg"/>
