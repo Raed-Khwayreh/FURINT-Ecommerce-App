@@ -34,4 +34,8 @@ Categories page, Favorite page, Proudct details page, Profile page, Edit profile
 
 <img height=388 width=925 src="https://user-images.githubusercontent.com/78206754/209868906-5c148725-7beb-4c6e-ad0d-2d73fb965d39.jpg"/>
 
+Admin page to add new category, delete category, show categories, edit category (Add new offer is not work yet)
 
+<img height=388 width=925 src="https://user-images.githubusercontent.com/78206754/209869843-dd86d1b0-9567-4abe-8920-23968f10f515.jpg"/>
+
+--This project was for a training course, and I submitted the required assignment, but I will complete the project to be complete
