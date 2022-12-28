@@ -30,4 +30,4 @@ and this to check phone number (r"[05][69][23456789][0-9]{6}$") you can use only
 
 after login this is home page that show sliders for offers, categories, products 
 
-<img height=486 width=490 src="user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
+<img height=486 width=490 src="https://user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
