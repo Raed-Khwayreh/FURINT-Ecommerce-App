@@ -16,7 +16,7 @@ In This project I have used:
 Splash screen, Intro Page, Sign up Page, Sign in Page
 
 <p align="center">
-<img height=486 width=987 src="https://user-images.githubusercontent.com/78206754/209866259-a8dc963a-a11b-477f-97a9-476ba395163d.jpg"/>
+<img height=466 width=967 src="https://user-images.githubusercontent.com/78206754/209866259-a8dc963a-a11b-477f-97a9-476ba395163d.jpg"/>
 </p>
 
 You can sign in direct or create new account 
@@ -28,14 +28,15 @@ and this to check phone number (r"[05][69][23456789][0-9]{6}$") you can use only
 
 after login this is home page that show sliders for offers, categories, products 
 
-<img height=486 width=490 src="https://user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
+<img height=466 width=470 src="https://user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
 
 Categories page, Favorite page, Proudct details page, Profile page, Edit profile page
 
-<img height=388 width=925 src="https://user-images.githubusercontent.com/78206754/209868906-5c148725-7beb-4c6e-ad0d-2d73fb965d39.jpg"/>
+<img height=368 width=905 src="https://user-images.githubusercontent.com/78206754/209868906-5c148725-7beb-4c6e-ad0d-2d73fb965d39.jpg"/>
 
 Admin page to add new category, delete category, show categories, edit category (Add new offer is not work yet)
 
-<img height=388 width=925 src="https://user-images.githubusercontent.com/78206754/209869843-dd86d1b0-9567-4abe-8920-23968f10f515.jpg"/>
+<img height=368 width=759 src="https://user-images.githubusercontent.com/78206754/209869843-dd86d1b0-9567-4abe-8920-23968f10f515.jpg"/>
+
 
 --This project was for a training course, and I submitted the required assignment, but I will complete the project to be complete
