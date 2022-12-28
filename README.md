@@ -2,7 +2,7 @@
 
 Mobile app for Furniture shop built with Flutter and Firebase
 
-## Getting Started
+## 
 In This project I have used:
 
 1-Provider  2-Firebase authentication.
