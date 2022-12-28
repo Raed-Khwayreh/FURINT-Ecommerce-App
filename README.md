@@ -8,4 +8,5 @@
  <h4 align="left">4-Provider</h4>
  <h4 align="left">5-Carousel slider</h4>
  <h4 align="left">6-Image Picker</h4>
+ <h4 align="left">7-animated Splash Screen</h4> 
 </div>
