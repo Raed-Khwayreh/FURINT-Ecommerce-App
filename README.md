@@ -16,7 +16,7 @@ In This project I have used:
 Splash screen, Intro Page, Sign up Page, Sign in Page
 
 <p align="center">
-<img height=426 width=927 src="https://user-images.githubusercontent.com/78206754/209866259-a8dc963a-a11b-477f-97a9-476ba395163d.jpg"/>
+<img height=350 width=700 src="https://user-images.githubusercontent.com/78206754/209866259-a8dc963a-a11b-477f-97a9-476ba395163d.jpg"/>
 </p>
 
 You can sign in direct or create new account 
