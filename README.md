@@ -5,17 +5,11 @@ Mobile app for Furniture shop built with Flutter and Firebase
 ## Getting Started
 In This project I have used:
 
-1-Provider
+1-Provider 2-Firebase authentication.
 
-2-Firebase authentication.
+3-Firestore. 4-Firestorage.
 
-3-Firestore.
-
-4-Firestorage.
-
-5-Animated Splash Screen
-
-6-Image Picker
+5-Animated Splash Screen 6-Image Picker
 
 7-Carousel Slider
 
@@ -36,4 +30,4 @@ and this to check phone number (r"[05][69][23456789][0-9]{6}$") you can use only
 
 after login this is home page that show sliders for offers, categories, products 
 
-<img height=486 width=990 src="user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
+<img height=486 width=490 src="user-images.githubusercontent.com/78206754/209867915-f69e773b-5ade-4f7f-9d96-30b4347fff1d.jpg"/>
