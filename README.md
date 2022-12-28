@@ -1,7 +1,6 @@
 # FURINT
 
 Mobile app for Furniture shop built with Flutter and Firebase
-
 ## 
 In This project I have used:
 
