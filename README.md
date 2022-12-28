@@ -32,6 +32,6 @@ after login this is home page that show sliders for offers, categories, products
 
 Categories page, Favorite page, Proudct details page, Profile page, Edit profile page
 
-<img height=486 width=1156 src="https://user-images.githubusercontent.com/78206754/209868906-5c148725-7beb-4c6e-ad0d-2d73fb965d39.jpg"/>
+<img height=388 width=925 src="https://user-images.githubusercontent.com/78206754/209868906-5c148725-7beb-4c6e-ad0d-2d73fb965d39.jpg"/>
 
 
